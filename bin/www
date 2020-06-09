@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 const http = require('http');
-const configs = require('../configs');
+const config = require('../config');
 
 const appHttp = require('../appHttp');
 const appWs = require('../appWs');
 
-const port = normalizePort(configs.port);
+const port = normalizePort(config.port);
 const server = http.createServer(appHttp.callback());
 appWs(server);
 
